@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curiosidades Olimpíadas</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        section {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+    </style>
+    <script src="../src/js/index.js" defer>
+       
+    </script>
+</head>
+
+<body>
+    <header class="header-esportes">
+        <a href="#" class="logo"><img src="assets/icone.svg"></a>
+        <nav class="navbar">
+            <a href="index.html">Início</a>
+            <a href="historia.html">Jogos Olímpicos</a>
+            <a href="esportes.html">Esportes</a>
+            <a href="curiosidades.html">Curiosidades</a>
+        </nav>
+    </header>
+    <section id="esportes">
+        <div class="texto-branco">
+            <a href="conteudo/conteudoEsportes.html"></a>
+        </div>
+        <hr>
+    </section>
+    <script>
+        // Carregando os textos html grande para os arquivos HTML principais 
+        fetch('conteudo/conteudoEsportes.html').then(res => res.text()).then(data => {
+            document.getElementById('esportes').innerHTML = data;
+        });
+
+        const todosEsportes = [ 
+        'Atletismo','Badminton','Basquete','Basquete 3x3','Beisebol Softbol','Biatlo',
+        'Bobsled','Boxe','Breaking','Canoagem de Velocidade','Canoagem Slalom','Ciclismo BMX Freestyle',
+        'Ciclismo BMX Racing','Ciclismo de Estrada', 'Ciclismo de Pista', 'Ciclismo Mountain Bike', 'Combinado nórdico', 'Cricket',
+        'Curling','Escalada','Esgrima','Esqui alpino','Esqui cross-country','Esqui de Montanha','Esqui estilo livre',
+        'Flag Football','Futebol','Futsal','Ginástica Acrobática','Ginástica Artística','Ginástica de Trampolim','Ginástica Rítmica',
+        'Golfe','Handebol','Handebol de Praia','Hipismo','Hóquei no gelo','Hóquei sobre Grama','Judô','Karatê','Lacrosse','Levantamento de Peso',
+        'Luge','Luta','Maratona Aquática','Nado Artístico','Natação','Patinação artística','Patinação de velocidade','Patinação de velocidade em pista curta',
+        'Patinação de Velocidade Inline','Pentatlo Moderno','Polo Aquático','Remo','Rugby Sevens','Salto de esqui','Saltos Ornamentais','Skate','Skeleton',
+        'Snowboard','Squash','Surfe','Taekwondo','Tênis','Tênis de Mesa','Tiro com Arco','Tiro Esportivo','Triatlo','Vela','Vôlei','Vôlei de Praia'
+        ]
+
+        const jogosOlimpicos = [
+        'Atletismo','Badminton','Basquete','Basquete 3x3','Beisebol Softbol','Boxe','Breaking','Canoagem de Velocidade',
+        'Canoagem Slalom','Ciclismo BMX Freestyle','Ciclismo BMX Racing','Ciclismo de Estrada','Ciclismo de Pista','Ciclismo Mountain Bike',
+        'Cricket','Escalada','Esgrima','Flag Football','Futebol','Ginástica Artística','Ginástica de Trampolim','Ginástica Rítmica',
+        'Golfe','Handebol','Hipismo','Hóquei sobre Grama','Judô','Karatê','Lacrosse','Levantamento de Peso','Luta',
+        'Maratona Aquática','Nado Artístico','Natação','Pentatlo Moderno','Polo Aquático','Remo','Rugby Sevens','Saltos Ornamentais',
+        'Skate','Squash','Surfe','Taekwondo','Tênis','Tênis de Mesa','Tiro com Arco','Tiro Esportivo','Triatlo','Vela',
+        'Vôlei','Vôlei de Praia']
+
+        const jogosOlimpicosDeInverno = [
+        'Biatlo','Bobsled','Combinado nórdico','Curling','Esqui alpino','Esqui cross-country','Esqui de Montanha',
+        'Esqui estilo livre','Hóquei no gelo','Luge','Patinação artística','Patinação de velocidade','Patinação de velocidade em pista curta',
+        'Salto de esqui','Skeleton','Snowboard']
+
+        const jogosOlimpicosDaJuventude = [
+        'Atletismo','Badminton','Basquete 3x3','Boxe','Breaking','Ciclismo BMX Freestyle','Ciclismo de Estrada','Escalada',
+        'Esgrima','Futsal','Ginástica Acrobática','Ginástica Artística','Ginástica de Trampolim','Ginástica Rítmica','Golfe',
+        'Handebol de Praia','Hipismo','Hóquei sobre Grama','Judô','Karatê','Levantamento de Peso','Luta','Natação',
+        'Patinação de Velocidade Inline','Pentatlo Moderno','Remo','Rugby Sevens','Saltos Ornamentais','Skate',
+        'Surfe','Taekwondo','Tênis','Tênis de Mesa','Tiro com Arco','Tiro Esportivo','Triatlo','Vela','Vôlei de Praia'
+        ]
+
+        const jogosOlimpicosDaJuventudeDeInverno = [
+        'Biatlo','Bobsled','Combinado nórdico','Curling','Esqui alpino','Esqui cross-country','Esqui de Montanha','Esqui estilo livre',
+        'Hóquei no gelo','Luge','Patinação artística','Patinação de velocidade','Patinação de velocidade em pista curta','Salto de esqui',
+        'Skeleton','Snowboard']
+
+        // Mostrando as listas de esporte de acordo com a escolha no Select
+        const mostrarLista = () => {
+            const categoriaSelecionada = document.getElementById("categoria").value;
+            if (categoriaSelecionada === "Selecione") {
+            
+                location.reload();
+            } else {
+                const listaFormatada = obterListaFormatada(categoriaSelecionada);
+                document.getElementById("listaEsportes").innerHTML = listaFormatada;
+            }
+        }
+
+        const obterListaFormatada = (categoriaSelecionada) => {
+            const listaEsportes = obterListaEsportesOrdenada(categoriaSelecionada)
+            // Mapear os esportes para criar a lista formatada
+            const listaFormatada = listaEsportes.map((esporte, index, array) => {
+                const primeiraLetra = esporte.charAt(0).toUpperCase();
+                // É nova letra se estivermos na primeira posição, ou seja assim que começamos a lista, ou se a primeira letra do esporte atual for diferente da "primeira letra" do esporte anterior
+                const isNovaLetra = index === 0 || primeiraLetra !== array[index - 1].charAt(0).toUpperCase();
+
+                if (isNovaLetra) {
+                    return `<h1>${primeiraLetra}</h1><p>${esporte}</p>`;
+                } else {
+                    return `<p>${esporte}</p>`;
+                }
+            }).join(''); 
+
+            return listaFormatada;
+        }
+
+        const obterListaEsportesOrdenada = (categoriaSelecionada) => {
+            if (categoriaSelecionada === "todos") {
+                return todosEsportes.sort();
+            } else if (categoriaSelecionada === "jogos") {
+                return jogosOlimpicos.sort();
+            } else if (categoriaSelecionada === "jogosinverno") {
+                return jogosOlimpicosDeInverno.sort();
+            } else if(categoriaSelecionada === "jogosjuventude") {
+                return jogosOlimpicosDaJuventude.sort();
+            }else{
+                return jogosOlimpicosDaJuventudeDeInverno.sort();
+            }
+
+        }
+        mostrarLista(); 
+    </script>
+</body>
+</html>
