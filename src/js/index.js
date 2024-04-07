@@ -46,18 +46,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Filtra apenas os registros de atletas do sexo feminino
                 const atletasF = registros.filter((atleta) => atleta && atleta.sex === 'F'); // Exibe os registros de atletas femininas no console
-                // Função que calcula a média de altura das atletas de um esporte
                 const mediaAlturaAtletas = (esporte) => (atletas) => {
                     const alturasUnicas = atletas
                         .filter(atleta => atleta.height !== 'NA' && atleta.sport === esporte) // Corrigindo 'Height' para 'height' e 'Sport' para 'sport'
-                        .map(atleta => parseFloat(atleta.height)); // Convertendo altura para número
-                    const alturaFormatada = alturasUnicas.map((altura) => (altura / 100)); // Removendo o toFixed() para manter o número decimal
-                    const somaAlturas = alturaFormatada.reduce((acc, altura) => acc + altura, 0); // Removendo parseFloat() pois já estamos trabalhando com números
-                    const qtdeAtletas = alturasUnicas.length;
-                    const mediaAlturas = (somaAlturas / qtdeAtletas).toFixed(2).replace('.', ','); // Mantendo a formatação da média
-
+                        .map(atleta => parseFloat(atleta.height)) // Convertendo altura para número
+                    const alturaFormatada = alturasUnicas.map((altura) => (altura / 100)) // Removendo o toFixed() para manter o número decimal
+                    const somaAlturas = alturaFormatada.reduce((acc, altura) => acc + altura, 0) // Removendo parseFloat() pois já estamos trabalhando com números
+                    const qtdeAtletas = alturasUnicas.length
+                    const mediaAlturas = (somaAlturas / qtdeAtletas).toFixed(2).replace('.', ',') // Mantendo a formatação da média
+                
                     return `A média de altura das atletas da modalidade ${esporte} é ${mediaAlturas}m!`;
+                }                        
+                const selectElement5 = document.querySelector('select');
+
+                selectElement5.addEventListener('change', () => {
+                    const esporteSelecionado = selectElement5.value;
+                    const resultadoMediaAltura = mediaAlturaAtletas(esporteSelecionado)(atletasF);
+
+                    const mediaAlturaElement = document.getElementById('mediaAltura');
+
+                    mediaAlturaElement.textContent = resultadoMediaAltura;
+                });
+                // Filtro de todos os países das atletlas femininas
+                const paisesAtletasF = [...new Set(atletasF.map(atleta => atleta.city))];
+                const calcularMedalhas = () => {
+                    const paísSelecionado = document.getElementById('selectPais').value;
+                    const esporteSelecionado = document.getElementById('selectModalidade').value;
+                    if (paísSelecionado !== 'Selecione' && esporteSelecionado !== 'Selecione') {
+                        const totalMedalhas = atletasF.reduce((total, atleta) => {
+                            if (atleta.city === paísSelecionado && atleta.sport === esporteSelecionado && atleta.medal === 'Gold') {
+                                total++;
+                            }
+                            return total;
+                        }, 0);
+                        document.getElementById('resultado2').innerText = `Total de medalhas de ouro: ${totalMedalhas}`;
+                    } else {
+                        document.getElementById('resultado2').innerText = "Por favor, selecione tanto o país quanto o esporte.";
+                    }
                 };
+
+                const selectPaisElement = document.getElementById('selectPais');
+                const selectModalidadeElement = document.getElementById('selectModalidade');
+
+                selectPaisElement.addEventListener('change', calcularMedalhas);
+                selectModalidadeElement.addEventListener('change', calcularMedalhas);
+                selectPaisElement.dispatchEvent(new Event('change')); // Força o cálculo inicial
 
                 // Função que identifica o país com mais ou menos medalhas em um esporte específico
                 const medalhasPorEsporte = (esporte) => (atletas) => {

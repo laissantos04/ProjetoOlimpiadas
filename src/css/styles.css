@@ -204,36 +204,6 @@ section {
   background-color: #007bff;
 }
 
-@keyframes changeBackground {
-  0% {
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 2, 110) 0%,
-      rgb(255, 70, 70) 100%
-    );
-  }
-  33% {
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 2, 110) 0%,
-      rgb(255, 70, 70) 100%
-    );
-  }
-  66% {
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 2, 110) 0%,
-      rgb(255, 70, 70) 100%
-    );
-  }
-  100% {
-    background-image: linear-gradient(
-      45deg,
-      rgb(52, 2, 110) 0%,
-      rgb(255, 70, 70) 100%
-    );
-  }
-}
 
 .lista-esportes {
   position: relative;
