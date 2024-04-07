@@ -152,7 +152,57 @@ section {
   margin: 20px;
 }
 
+.timeline-section {
+  background: url('../assets/imagem2.jpg') no-repeat fixed center;
+  max-height: 100%;
+  background-size: cover;
+  padding: 20px;
+}
 
+.timeline-section .timeline {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.timeline-section .timeline li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.timeline-section .timeline li h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.timeline-section .timeline li p {
+  margin: 0;
+  color: #666;
+}
+
+.timeline-section .timeline li:before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #007bff;
+}
+
+/* Ajuste para não aplicar a borda ao último item */
+.timeline-section .timeline li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 2px;
+  height: calc(100% - 20px);
+  background-color: #007bff;
+}
 
 @keyframes changeBackground {
   0% {
