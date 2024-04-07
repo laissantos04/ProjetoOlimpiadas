@@ -10,21 +10,37 @@
 
         body{
             overflow: hidden;
+            overflow-y: scroll;
         }
         p {
             text-align: justify;
             text-indent: 20px;
         }
         .texto-branco1 {
-            background-color: white; 
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.80);           
             padding: 20px; 
             border-radius: 10px; 
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-            height: 130px;
             margin: 20px;
-
-
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            font-family: "Mulish", sans-serif;
+            font-size: 18px;
+            color: #333;
+            text-align: left;
         }
+        .texto-branco1 .conteudo {
+            flex-grow: 1;
+            margin-right: 75px;
+        }
+        .texto-branco1 img {
+            max-width: 450px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
     </style>
     <script src="../src/js/index.js" defer>
        
@@ -34,25 +50,38 @@
 <body>
     <header class="header-index">
         <a href="#" class="logo"><img src="assets/icone.svg"></a>
+        <h1 class="site-title">MULHERES DE OURO</h1>
         <nav class="navbar">
             <a href="index.html">Sobre</a>
-            <a href="historia.html">Jogos Olímpicos</a>
+            <a href="historia.html">História</a>
             <a href="esportes.html">Esportes</a>
             <a href="curiosidades.html">Curiosidades</a>
         </nav>
     </header>
     <section id="index">
         <div class="texto-branco1">
-            <p> Bem-vindo(a) ao nosso site dedicado às curiosidades olímpicas, com um enfoque especial 
-                nas incríveis atletas que iluminaram o palco olímpico ao longo dos anos. Descubra também fatos interessantes sobre as mulheres que 
-                fizeram história nas Olimpíadas. Explore conosco também a história fascinante das Olimpíadas e o progresso notável das atletas nesse cenário. 
-            <p> Navegue pelas páginas e descubra 
-                como as mulheres conquistaram seu lugar de destaque nas competições olímpicas.</p>
+            <div class="conteudo">
+                <h1>O legado feminino nos Jogos Olímpicos &#129495</h1>
+                <br>            
+                <br>
+                <p>Bem-vindo(a) ao nosso site dedicado às curiosidades olímpicas, com um enfoque especial 
+                nas incríveis atletas que iluminaram o palco olímpico ao longo dos anos.</p>
+                <br>
+                <p>Descubra fatos interessantes sobre as mulheres que fizeram história nas Olimpíadas, e explore conosco a história fascinante das Olimpíadas, 
+                conhecendo o progresso notável das atletas nesse cenário.</p>
+                <br>
+                <p>Navegue pelas páginas e descubra como as mulheres conquistaram seu lugar de destaque nas competições olímpicas.</p>
+                <br>
+                <br>
+                <a href="historia.html" class="botao">Comece a explorar</a>
+            </div>
+            <div class="imagem-container">
+                <img src="../src/assets/athletes-doodle.jpeg" alt="atletasFemininas">
+            </div>
         </div>
         <hr>
     </section>
     
     <script src="../src/js/index.js"></script>
 </body>
-
 </html>

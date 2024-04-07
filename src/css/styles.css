@@ -20,14 +20,14 @@ body {
 }
 
 #index {
-  background: url("../assets/imagem4444.jpg") no-repeat fixed center;
+  background: url("../assets/bg-index.jpg") no-repeat fixed center;
   min-height: 100vh;
   background-size: cover;
   padding: 20px;
 }
 
 #jogos_olimpicos{
-    background: url('../assets/imagem2.jpg') no-repeat fixed center ;
+    background: url('../assets/bg-historia.jpg') no-repeat fixed center ;
     max-height: 100%;
     background-size: cover;
 }
@@ -61,7 +61,7 @@ section {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: url("../assets/imagem4444.jpg") no-repeat fixed center;
+  background: url("../assets/bg-index.jpg") no-repeat fixed center;
   background-size: cover;
 
 }
@@ -77,7 +77,7 @@ section {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: url('../assets/imagem2.jpg') no-repeat fixed center ;
+  background: url('../assets/bg-historia.jpg') no-repeat fixed center ;
   background-size: cover;
 }
 
@@ -119,7 +119,15 @@ section {
   width: 85px;
   height: 85px;
 }
-
+.site-title {
+  font-size: 25px;
+  font-weight: 200;
+  font-family: "Dosis", sans-serif;
+  margin-right: auto; 
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
 .navbar a {
   position: relative;
   font-size: 18px;
@@ -145,11 +153,25 @@ section {
 }
 
 .texto-branco {
-  background-color: white;
   padding: 20px;
   border-radius: 10px;  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.botao {
+  display: inline-block;
+  background-color: coral;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s; 
+}
+
+.botao:hover {
+  background-color:crimson;
 }
 
 .timeline-section {
