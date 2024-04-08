@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+
+}
+
+#index {
+  background: url("../assets/bg-index.jpg") no-repeat fixed center;
+  min-height: 100vh;
+  background-size: cover;
+  padding: 20px;
+}
+
+#jogos_olimpicos{
+    background: url('../assets/bg-historia.jpg') no-repeat fixed center ;
+    max-height: 100%;
+    background-size: cover;
+}
+
+#esportes{
+    background: url("../assets/fundo2.jpg") no-repeat fixed center;
+    max-height: 100%;
+    background-size: cover;
+}
+
+#curiosidades {
+    background: url("../assets/fundo3.jpg") no-repeat fixed center;
+    max-height: 100%;
+    background-size: cover;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.header-index{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: url("../assets/bg-index.jpg") no-repeat fixed center;
+  background-size: cover;
+
+}
+
+.header-jogos_olimpicos{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: url('../assets/bg-historia.jpg') no-repeat fixed center ;
+  background-size: cover;
+}
+
+.header-esportes{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: url("../assets/fundo2.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+
+.header-curiosidades{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background: url("../assets/fundo3.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+
+
+.logo > img {
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  width: 85px;
+  height: 85px;
+}
+.site-title {
+  font-size: 25px;
+  font-weight: 200;
+  font-family: "Dosis", sans-serif;
+  margin-right: auto; 
+  margin-left: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.texto-branco {
+  padding: 20px;
+  border-radius: 10px;  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.botao {
+  display: inline-block;
+  background-color: coral;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s; 
+}
+
+.botao:hover {
+  background-color:crimson;
+}
+
+.timeline-section {
+  background: url('../assets/imagem2.jpg') no-repeat fixed center;
+  max-height: 100%;
+  background-size: cover;
+  padding: 20px;
+}
+
+.timeline-section .timeline {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.timeline-section .timeline li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.timeline-section .timeline li h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.timeline-section .timeline li p {
+  margin: 0;
+  color: #666;
+}
+
+.timeline-section .timeline li:before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #007bff;
+}
+
+/* Ajuste para não aplicar a borda ao último item */
+.timeline-section .timeline li:not(:last-child):after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  width: 2px;
+  height: calc(100% - 20px);
+  background-color: #007bff;
+}
+
+
+.lista-esportes {
+  position: relative;
+  overflow-y: auto;
+  height: calc(300% - 300px); /* ou qualquer altura desejada */
+}
+
+.lista-esportes ul {
+  list-style-type: none; 
+  padding: 0;
+  max-height: 300%; /* ou qualquer altura desejada */
+  overflow-y: auto;
+}
+
+.lista-esportes ul li {
+  margin-bottom: 2px; /* Reduza a margem inferior */
+}
+
+.esportes-grid {
+  columns: 2; 
+  column-gap: 20px; 
+  gap: 20px; 
+}
+
+.esportes-grid p {
+  background-color: white; 
+  padding: 10px; /* Reduza o padding */
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 10px; /* Reduza a margem inferior */
+  line-height: 0.9; 
+}
