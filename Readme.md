@@ -15,7 +15,6 @@ organizado, apresentando pelo menos 5 questões relativas às olimpíadas, onde 
 <p>https://olympics.com/pt/olympic-games</p>
 <p>https://sae.digital/mulheres-nas-olimpiadas/#:~:text=Elas%20conquistaram%20medalhas%20de%20ouro,Ol%C3%ADmpicos%20de%20Atlanta%2C%20em%201996</p>
 
-## Integrantes da equipe
-<p> Equipe de desenvolvimento: </p>
+## Equipe de desenvolvimento:
 <p>IZABELLY MARIA FREIRE MARTINS DA SILVA</p>
 <p>LAIS SANTOS DE SOUZA</p>
