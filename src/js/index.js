@@ -1,8 +1,15 @@
+/*A primeira linha do código abaixo diz ao navegador para executar o código dentro da função de seta quando o evento DOMContentLoaded for acionado, 
+o que significa que todo o HTML da página está disponível para manipulação via JavaScript. 
+
+"DOMContentLoaded" é um tipo de evento específico que é acionado quando o HTML inicial foi completamente carregado e analisado.*/ 
+
 document.addEventListener("DOMContentLoaded", () => {
     // Caminho para o arquivo CSV
     const filePath = "../src/js/athlete_events.csv";
 
     // Função para processar o arquivo CSV
+    // Parte da função CSV foi implementada por Adley e sua equipe. 
+    // Utilizamos alguns trechos do código já pronto, e modificamos outros trechos para adequar melhor à nossa necessidade.
     const processarCSV = () => {
         fetch(filePath) //Busca o arquivo no servidor e retorna uma Promise com a resposta
             .then(response => response.text())
@@ -196,12 +203,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 //Código que lê a opção selecionada pelo usuário no site e passa como parâmetro de entrada, chamando as funções
+                //Quando uma das opções é selecionada pelo usuário no HTML da página, a função correspondente é chamada
                 const selectElement = document.querySelectorAll('select')[0];
                 const selectElement2 = document.querySelectorAll('select')[1];
                 const selectElement3 = document.querySelectorAll('select')[2];
                 const selectElement4 = document.querySelectorAll('select')[3];
                 
-
+                //Chama a função que calcula a média de altura das atletas
                 selectElement.addEventListener('change', () => {
                     const esporteSelecionado = selectElement.value;
                     const resultadoMediaAltura = mediaAlturaAtletas(esporteSelecionado)(atletasF);
@@ -209,6 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     mediaAlturaElement.textContent = resultadoMediaAltura;
                 });
 
+                //Chama a função que identifica os países com mais e menos medalhas num esporte
                 selectElement2.addEventListener('change', () => {
                     const esporteSelecionado = selectElement2.value;
                     const resultadoMedalhasPorEsporte = medalhasPorEsporte(esporteSelecionado)(atletasF);
@@ -216,6 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     medalhasPorEsporteElement.textContent = resultadoMedalhasPorEsporte;
                 });
 
+                //Chama a função que identifica a atleta que conquistou mais medalhas num esporte
                 selectElement3.addEventListener('change', () => {
                     const esporteSelecionado = selectElement3.value;
                     const resultadoAtletaComMaisMedalhas = atletaComMaisMedalhas(esporteSelecionado)(atletasF);
@@ -223,6 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     atletaComMaisMedalhasElement.textContent = resultadoAtletaComMaisMedalhas;
                 });
 
+                //Chama a função que identifica a atleta mais velha e a mais nova a competir numa edição
                 selectElement4.addEventListener('change', () => {
                     const edicaoSelecionada = selectElement4.value;
                     const resultadoIdadeAtletas = idadeAtletas(edicaoSelecionada)(atletasF);
@@ -230,7 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     idadeAtletasElement.textContent = resultadoIdadeAtletas;
                 });
                 
-<<<<<<< HEAD
             // Código para receber o input selecionado pelo usuário e chamar a função contarMedalhasDeOuro
             const selectPaisElement = document.getElementById('selectPais');
             const selectModalidadeElement = document.getElementById('selectModalidade');
@@ -265,22 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     location.reload();
                 }
             });
-=======
-                // Código para receber o input selecionado pelo usuário e chamar a função contarMedalhasDeOuro
-                    const selectPaisElement = document.getElementById('selectPais');
-                    const selectModalidadeElement = document.getElementById('selectModalidade');
-                    const resultadoElement = document.getElementById('resultado2');
-
-                    selectPaisElement.addEventListener('change', buscarMedalhasDeOuro);
-                    selectModalidadeElement.addEventListener('change', buscarMedalhasDeOuro);
-
-                    function buscarMedalhasDeOuro() {
-                        const paisSelecionado = selectPaisElement.value;
-                        const esporteSelecionado = selectModalidadeElement.value;
-                        const resultado = contarMedalhasDeOuro(paisSelecionado)(esporteSelecionado)(atletasF);
-                        resultadoElement.textContent = resultado;
-                    }
->>>>>>> 5179e4b50d07f7a58316283fc4a806414841a97e
     
             }) //chave que fecha o .then
             .catch(error => { // Chama o catch quando a promisse é rejeitada, e retorna um erro
@@ -291,14 +285,9 @@ document.addEventListener("DOMContentLoaded", () => {
     processarCSV();
 });
 
-<<<<<<< HEAD
 // Função para carregar as imagens e textos no html pelo id
 const  mostrarConteudo = (imagem, texto, idConteudo) => {
     const conteudoNoticia = document.getElementById(idConteudo);
     conteudoNoticia.innerHTML = "<img src='" + imagem + "' alt='Imagem da notícia'><p>" + texto + "</p>";
     conteudoNoticia.style.display = "block";
 }
-=======
-
-
->>>>>>> 5179e4b50d07f7a58316283fc4a806414841a97e
