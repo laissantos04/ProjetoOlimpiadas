@@ -230,18 +230,28 @@ section {
 .lista-esportes {
   position: relative;
   overflow-y: auto;
+<<<<<<< HEAD
   height: calc(300% - 300px); /* ou qualquer altura desejada */
+=======
+>>>>>>> 5179e4b50d07f7a58316283fc4a806414841a97e
 }
 
 .lista-esportes ul {
   list-style-type: none; 
   padding: 0;
+<<<<<<< HEAD
   max-height: 300%; /* ou qualquer altura desejada */
   overflow-y: auto;
 }
 
 .lista-esportes ul li {
   margin-bottom: 2px; /* Reduza a margem inferior */
+=======
+}
+
+.lista-esportes ul li {
+  margin-bottom: 5px; 
+>>>>>>> 5179e4b50d07f7a58316283fc4a806414841a97e
 }
 
 .esportes-grid {

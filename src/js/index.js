@@ -230,6 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     idadeAtletasElement.textContent = resultadoIdadeAtletas;
                 });
                 
+<<<<<<< HEAD
             // Código para receber o input selecionado pelo usuário e chamar a função contarMedalhasDeOuro
             const selectPaisElement = document.getElementById('selectPais');
             const selectModalidadeElement = document.getElementById('selectModalidade');
@@ -264,6 +265,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     location.reload();
                 }
             });
+=======
+                // Código para receber o input selecionado pelo usuário e chamar a função contarMedalhasDeOuro
+                    const selectPaisElement = document.getElementById('selectPais');
+                    const selectModalidadeElement = document.getElementById('selectModalidade');
+                    const resultadoElement = document.getElementById('resultado2');
+
+                    selectPaisElement.addEventListener('change', buscarMedalhasDeOuro);
+                    selectModalidadeElement.addEventListener('change', buscarMedalhasDeOuro);
+
+                    function buscarMedalhasDeOuro() {
+                        const paisSelecionado = selectPaisElement.value;
+                        const esporteSelecionado = selectModalidadeElement.value;
+                        const resultado = contarMedalhasDeOuro(paisSelecionado)(esporteSelecionado)(atletasF);
+                        resultadoElement.textContent = resultado;
+                    }
+>>>>>>> 5179e4b50d07f7a58316283fc4a806414841a97e
     
             }) //chave que fecha o .then
             .catch(error => { // Chama o catch quando a promisse é rejeitada, e retorna um erro
@@ -274,9 +291,14 @@ document.addEventListener("DOMContentLoaded", () => {
     processarCSV();
 });
 
+<<<<<<< HEAD
 // Função para carregar as imagens e textos no html pelo id
 const  mostrarConteudo = (imagem, texto, idConteudo) => {
     const conteudoNoticia = document.getElementById(idConteudo);
     conteudoNoticia.innerHTML = "<img src='" + imagem + "' alt='Imagem da notícia'><p>" + texto + "</p>";
     conteudoNoticia.style.display = "block";
 }
+=======
+
+
+>>>>>>> 5179e4b50d07f7a58316283fc4a806414841a97e
