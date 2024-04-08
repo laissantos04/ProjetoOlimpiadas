@@ -3,7 +3,7 @@
 de maneira funcional.</p>
 
 ## Link do projeto: 
-<p>https://mulheresdeouro.netlify.app/curiosidades</p>
+<p>https://mulheresdeouro.netlify.app</p>
 
 ## Objetivo:
 <p>O objetivo principal é criar
