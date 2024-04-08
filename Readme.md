@@ -2,7 +2,8 @@
 <p>Desenvolvimento de página sobre as olimpíadas, feito com HTML, CSS e JavaScript
 de maneira funcional.</p>
 
-## link do projeto: 
+## Link do projeto: 
+<p>https://mulheresdeouro.netlify.app/curiosidades</p>
 
 ## Objetivo:
 <p>O objetivo principal é criar
