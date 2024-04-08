@@ -5,7 +5,7 @@ o que significa que todo o HTML da página está disponível para manipulação 
 
 document.addEventListener("DOMContentLoaded", () => {
     // Caminho para o arquivo CSV
-    const filePath = "../src/js/athlete_events.csv";
+    const filePath = "/src/js/athlete_events.csv";
 
     // Função para processar o arquivo CSV
     // Parte da função CSV foi implementada por Adley e sua equipe. 
